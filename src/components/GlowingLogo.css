@@ -1,0 +1,167 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    perspective: 1000px;
+}
+
+.glowing-logo {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* Circle shape */
+
+    /* The core gradient */
+    background: conic-gradient(from 0deg,
+            #ff0080,
+            #7928ca,
+            #ff4d4d,
+            #f9cb28,
+            #ff0080);
+
+    /* Animations */
+    animation:
+        reveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+        spin-gradient 4s linear infinite;
+
+    /* Initial state for reveal animation */
+    opacity: 0;
+    transform: scale(0.5);
+
+    /* Glow effect */
+    box-shadow: 0 0 60px rgba(255, 0, 128, 0.4);
+}
+
+/* Inner circle to make it look like a ring or just add depth */
+.glowing-logo::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    /* Thickness of the ring/border */
+    background-color: #000;
+    /* Match background to create ring effect */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* The actual content/icon inside */
+.logo-inner {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+
+    /* Text gradient */
+    background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: fade-content 2s ease forwards 0.5s;
+    opacity: 0;
+}
+
+/* Outer Glow Blur Layer */
+.glowing-logo::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: inherit;
+    filter: blur(20px);
+    opacity: 0.6;
+    z-index: -1;
+    animation: pulse-glow 3s ease-in-out infinite alternate;
+}
+
+/* Keyframes */
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-45deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes spin-gradient {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Wait, rotating the whole div rotates the content too. 
+   Better approach for gradient spin: adjust background-position 
+   BUT conic-gradient doesn't animate background-position well.
+   So we rotate the main container, and counter-rotate content? 
+   No, let's just rotate the ring mechanism.
+*/
+
+/* Redefine animation for cleaner effect */
+.glowing-logo {
+    /* Reset spin for the container */
+    animation: reveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Spinner element */
+.glowing-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+            #ff0080,
+            #7928ca,
+            #ff4d4d,
+            #f9cb28,
+            #ff0080);
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-glow {
+    0% {
+        filter: blur(20px);
+        opacity: 0.5;
+    }
+
+    100% {
+        filter: blur(30px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes fade-content {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* Default Dark Mode (Deep Black Terminal Look) */
+  --bg-color: #050505;
+  --card-bg: #0a0a0a;
+  --text-primary: #e5e5e5;
+  --text-secondary: #888888;
+  --accent: #3b82f6;
+  /* Blue 500 */
+  --accent-hover: #ffffff;
+  --border: #333333;
+  --grid-line: rgba(255, 255, 255, 0.03);
+
+  --font-main: 'Space Mono', monospace;
+  --container-width: 900px;
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --card-bg: #f3f3f3;
+  --text-primary: #050505;
+  --text-secondary: #555555;
+  --accent: #000000;
+  --accent-hover: #3b82f6;
+  --border: #e0e0e0;
+  --grid-line: rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  /* Subtle Grid Background */
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 30px 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Pixel / Terminal Headings */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  display: block;
+  transform: none;
+  /* Reset previous center transform */
+  left: auto;
+}
+
+.section-title::after {
+  display: none;
+  /* Remove previous underline accent */
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-color);
+  border-color: var(--text-primary);
+  transform: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.btn-outline:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+[::-webkit-scrollbar-thumb:hover] {
+  background: var(--text-secondary);
+}

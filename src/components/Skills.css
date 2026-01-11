@@ -1,0 +1,46 @@
+.skills-section {
+    padding: 5rem 0;
+    background-color: transparent;
+    /* Show global grid pattern */
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.tech-card {
+    background-color: rgba(18, 18, 18, 0.8);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tech-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.tech-card:hover .tech-icon {
+    transform: scale(1.1);
+}
+
+.tech-name {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}

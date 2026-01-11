@@ -1,0 +1,496 @@
+/* Hero.css */
+.hero-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 60px;
+    /* Offset for navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #050505;
+}
+
+/* Noise Texture - Essential for Arc Style */
+.hero-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    z-index: 1;
+    opacity: 0.5;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+/* Animated Background Shapes */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background-color: #030014;
+    /* Back to deep space background */
+}
+
+.bg-shape {
+    position: absolute;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: float 10s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+}
+
+/* Grid & Pulse High-Tech UI */
+.hero-grid-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.07;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+    animation: bg-pan 60s linear infinite;
+}
+
+.center-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 0, 128, 0.1);
+    /* Arc Pink tint */
+    z-index: 0;
+    opacity: 0;
+    animation: pulse-ring 4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.center-pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(121, 40, 202, 0.1);
+    /* Arc Purple tint */
+    animation: pulse-ring 4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    animation-delay: 2s;
+}
+
+@keyframes bg-pan {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+    }
+}
+
+.shape-1 {
+    top: -20%;
+    left: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: #ff0080;
+    /* Arc Pink */
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    bottom: -20%;
+    right: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: #7928ca;
+    /* Arc Purple */
+    animation-delay: -4s;
+}
+
+.shape-3 {
+    top: 30%;
+    left: 40%;
+    width: 40vw;
+    height: 40vw;
+    background: #ff9e00;
+    /* Arc Orange/Peach */
+    animation-delay: -7s;
+    opacity: 0.6;
+}
+
+/* Text Container */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+
+/* Staggered Animation Delays for Startup Feel */
+.hero-word:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hero-word:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.hero-word {
+    font-size: clamp(3rem, 15vw, 10rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    margin: 0;
+
+    background: linear-gradient(180deg, #ffffff 0%, #cccccc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop_shadow(0 0 20px rgba(255, 255, 255, 0.3));
+
+    /* Modern "Pop" Animation */
+    animation: slide-up-fade 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(40px);
+    /* Init state */
+}
+
+.hero-word.gradient-text {
+    /* Pink, Purple, Orange blend as requested */
+    background: linear-gradient(90deg, #ff0080 0%, #7928ca 50%, #ff9e00 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 0 30px rgba(255, 0, 128, 0.4));
+
+    animation:
+        slide-up-fade 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+        gradient-shift 8s ease infinite;
+}
+
+/* Tweaks for the profile card to float above */
+.hero-profile {
+    z-index: 10;
+    position: relative;
+    margin-top: 50px;
+
+    /* Profile enters last */
+    animation: fade-in-up 1.2s ease-out forwards 0.8s;
+    opacity: 0;
+}
+
+.profile-card {
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(40px, 60px) rotate(10deg);
+    }
+}
+
+@keyframes slide-up-fade {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.profile-header {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px dashed var(--border);
+    align-items: flex-start;
+}
+
+.profile-pic-container {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    padding: 5px;
+    background-color: var(--card-bg);
+}
+
+/* Glassmorphism Logo Circle */
+.glass-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    /* Dark Futuristic Glass Background */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    /* Borders for shine */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    /* Top Highlight */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    /* Glows */
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.5),
+        /* Deep shadow */
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+    /* Inner glow */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-logo::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.logo-text {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: sans-serif;
+    letter-spacing: -2px;
+
+    /* Neon Gradient: Pink -> Purple -> Blue */
+    background: linear-gradient(135deg, #ff0080 0%, #7928ca 50%, #00f0ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 0 10px rgba(121, 40, 202, 0.6));
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    /* Adds to the terminal vibe */
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.last-updated {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.profile-name {
+    font-size: 2rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.verified-badge {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.profile-bio {
+    /* Removed old class style, kept for reference if needed elsewhere or fallback */
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-bio-detail {
+    /* Removed old class style */
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Rotating Bio Animation */
+.bio-lines {
+    display: grid;
+    place-items: center;
+    margin-top: 15px;
+    height: 60px;
+    position: relative;
+    width: 100%;
+}
+
+.bio-text {
+    grid-area: 1 / 1;
+    margin: 0;
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    /* Loop: 12s total */
+    animation: rotate-text 12s ease-in-out infinite;
+}
+
+.bio-text.line-1 {
+    color: #fff;
+    animation-delay: 0s;
+}
+
+.bio-text.line-2 {
+    animation-delay: 4s;
+}
+
+.bio-text.line-3 {
+    animation-delay: 8s;
+}
+
+@keyframes rotate-text {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    4% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    29% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    33% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.profile-details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1.5rem 0;
+    gap: 0.8rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.detail-item .icon {
+    color: var(--text-secondary);
+    width: 20px;
+    text-align: center;
+}
+
+.detail-item a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .profile-name {
+        justify-content: center;
+    }
+
+    .profile-details-grid {
+        padding-left: 1rem;
+    }
+}
