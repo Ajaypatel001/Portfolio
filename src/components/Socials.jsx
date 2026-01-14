@@ -47,7 +47,7 @@ const Socials = () => {
             name: 'X (Twitter)',
             handle: '@AjayPatel',
             icon: 'fab fa-twitter', /* or fa-x-twitter if available in version */
-            url: 'https://x.com/AjayPatel',
+            url: 'https://x.com/AjaypatelPate16',
             className: 'twitter'
         },
 
