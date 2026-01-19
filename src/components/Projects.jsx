@@ -49,7 +49,7 @@ const Projects = () => {
                 techStack: "MERN Stack, OpenAI API"
             },
             tech: ["MERN Stack", "React", "Node"],
-            github: "#",
+            github: "",
             demo: "#",
             icon: "fas fa-laptop-code"
         },
@@ -63,7 +63,7 @@ const Projects = () => {
                 techStack: "HTML, CSS, JavaScript, Fetch API"
             },
             tech: ["Frontend", "API"],
-            github: "#",
+            github: "https://github.com/Ajaypatel001/Govt.scheems",
             demo: "#",
             icon: "fas fa-landmark"
         },
@@ -77,7 +77,7 @@ const Projects = () => {
                 techStack: "React, Node.js, Express, MongoDB, AWS"
             },
             tech: ["React", "Node.js", "AWS"],
-            github: "#",
+            github: "https://github.com/Ajaypatel001/Blog_project",
             demo: "#",
             icon: "fas fa-blog"
         },
@@ -91,7 +91,7 @@ const Projects = () => {
                 techStack: "React, Redux Toolkit, TMDB API"
             },
             tech: ["React", "Redux"],
-            github: "#",
+            github: "https://github.com/Ajaypatel001/Movie_Tracker",
             demo: "#",
             icon: "fas fa-film"
         }
