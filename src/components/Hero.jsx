@@ -28,12 +28,14 @@ const Hero = () => {
                 <div className="container">
                     <div className="profile-card">
                         <div className="profile-header">
-                            <div className="profile-pic-container">
-                                {/* Glass Logo Replacement */}
-                                <div className="glass-logo">
-                                    <span className="logo-text">AP</span>
-                                </div>
+                            <div className="glass-logo">
+                                <img
+                                    src="/Ajay photo.png"
+                                    alt="Ajay Patel"
+                                    className="profile-pic anti-gravity"
+                                />
                             </div>
+
 
                             <div className="profile-info">
                                 <span className="last-updated">Last updated just now</span>
