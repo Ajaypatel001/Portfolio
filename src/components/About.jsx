@@ -10,20 +10,21 @@ const About = () => {
                 <div className="about-content">
                     <div className="about-text">
                         <p>
-                            Hi, I am <strong>Ajay Patel</strong>, an <strong>AWS and DevOps Engineering student</strong> from India.
-                            I specialize in <strong>cloud infrastructure, automation, and DevOps practices</strong>.
+                            Hi, I am <strong>Ajay Patel</strong>, an <strong>aspiring AWS & DevOps Engineer</strong> from India.
+                            I am passionate about <strong>cloud infrastructure, automation, and modern DevOps practices</strong>.
                         </p>
 
                         <p>
                             I enjoy working with <strong>AWS, Docker, Terraform, Linux, and Git</strong> to design,
                             deploy, and manage scalable and reliable applications. I also have a strong foundation in
-                            <strong> modern web development using React, Node.js, HTML, and CSS</strong>.
+                            <strong> modern web development using React, Node.js, HTML, CSS, and JavaScript</strong>.
                         </p>
 
                         <p>
-                            I have built <strong>5+ real-world projects</strong> across web development, cloud, and DevOps,
-                            focusing on performance, security, and automation. I am continuously learning new tools
-                            and technologies to improve system reliability and scalability.
+                            I have developed several hands-on projects in web development, cloud, and DevOps,
+                            gaining practical experience in building scalable and secure applications.
+                            I am continuously learning new tools and technologies to enhance my skills
+                            and grow as a Cloud & DevOps professional.
                         </p>
                     </div>
                 </div>
