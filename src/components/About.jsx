@@ -1,125 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import './Socials.css';
+import React from 'react';
+import './About.css';
 
-const Socials = () => {
-    const [views, setViews] = useState(0);
+const About = () => {
+  return (
+    <section id="about" className="about-section">
+      <div className="container">
+        <h2 className="section-title">About Me</h2>
 
-    useEffect(() => {
-        const storedViews = localStorage.getItem('portfolioViews');
-        let currentViews = storedViews ? parseInt(storedViews) : 1200;
+        <div className="about-content">
+          <div className="about-text">
 
-        const newViews = currentViews + 1;
-        localStorage.setItem('portfolioViews', newViews.toString());
-        setViews(newViews);
-    }, []);
+            <p>
+              Hi, I am <strong>Ajay Patel</strong>, an aspiring 
+              <strong> AWS & DevOps Engineer</strong> from India. I am passionate about 
+              <strong> cloud infrastructure, automation, and modern DevOps practices</strong>.
+            </p>
 
-    const socialLinks = [
-        {
-            name: 'LinkedIn',
-            handle: '@Ajay-Patel',
-            icon: 'fab fa-linkedin',
-            url: 'https://www.linkedin.com/in/ajay-patel-622298318/',
-            className: 'linkedin'
-        },
-        {
-            name: 'GitHub',
-            handle: '@Ajaypatel001',
-            icon: 'fab fa-github',
-            url: 'https://github.com/Ajaypatel001',
-            className: 'github'
-        },
-        {
-            name: 'Replit',
-            handle: '@AjayPatel',
-            icon: 'fas fa-code',
-            url: 'https://replit.com/@Ajaypatel83054',
-            className: 'replit'
-        },
-        {
-            name: 'X (Twitter)',
-            handle: '@AjayPatel',
-            icon: 'fab fa-twitter',
-            url: 'https://x.com/AjaypatelPate16',
-            className: 'twitter'
-        },
-        {
-            name: 'GitLab',
-            handle: '@Ajaypatel001',
-            icon: 'fab fa-gitlab',
-            url: 'https://gitlab.com/ap1892503',
-            className: 'gitlab'
-        },
-        {
-            name: 'Portfolio Website',
-            handle: 'patel.help',
-            icon: 'fas fa-globe',
-            url: 'https://patel.help',
-            className: 'portfolio'
-        },
-        {
-            name: 'Resume',
-            handle: 'Download Resume',
-            icon: 'fas fa-file-download',
-            url: '/Ajay_Patel_DevOps_Resume.pdf',
-            className: 'resume'
-        }
-    ];
+            <p>
+              I enjoy working with <strong>AWS, Docker, Terraform, OpenTofu, Linux, Git, and GitHub</strong> 
+              to design, deploy, and manage scalable and reliable applications.
+              I have hands-on experience with <strong>CI/CD tools</strong> such as 
+              <strong> Jenkins, GitHub Actions, and GitLab CI/CD</strong>, enabling faster 
+              and more efficient software delivery.
+            </p>
 
-    const handleCardClick = (link) => {
-        // Resume → Download
-        if (link.name === "Resume") {
-            const a = document.createElement("a");
-            a.href = link.url;
-            a.download = "Ajay_Patel_DevOps_Resume.pdf";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        } 
-        // Others → Open in new tab
-        else {
-            window.open(link.url, "_blank");
-        }
-    };
+            <p>
+              Additionally, I have a strong foundation in modern web development using 
+              <strong> React, Node.js, HTML, CSS, and JavaScript</strong>. 
+              I have built multiple hands-on projects across web development, cloud, and DevOps, 
+              gaining practical experience in developing scalable and secure applications.
+            </p>
 
-    const handleArrowClick = (e, link) => {
-        e.stopPropagation(); // Prevent card click
-        window.open(link.url, "_blank");
-    };
+            <p>
+              I am a continuous learner who is always exploring new tools and technologies 
+              to enhance my expertise and grow as a Cloud & DevOps professional.
+            </p>
 
-    return (
-        <section className="socials-section">
-            <div className="socials-container">
-                <div className="socials-grid">
-                    {socialLinks.map((link, index) => (
-                        <div
-                            key={index}
-                            className={`social-card ${link.className}`}
-                            onClick={() => handleCardClick(link)}
-                            style={{ cursor: "pointer" }}
-                        >
-                            <div className="card-content">
-                                <div className="card-icon">
-                                    <i className={link.icon}></i>
-                                </div>
-                                <div className="card-text">
-                                    <span className="card-title">{link.name}</span>
-                                    <span className="card-handle">{link.handle}</span>
-                                </div>
-                            </div>
-
-                            <div 
-                                className="card-arrow"
-                                onClick={(e) => handleArrowClick(e, link)}
-                            >
-                                <i className="fas fa-external-link-alt"></i>
-                            </div>
-
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
-export default Socials;
+export default About;
