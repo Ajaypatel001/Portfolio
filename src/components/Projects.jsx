@@ -11,6 +11,49 @@ const Projects = () => {
 
     // Reordered list: DevOps/Cloud first
     const projectList = [
+
+        // ✅ NEW Terraform Project (Added on Top)
+        {
+            title: "Three-Tier Books Application (Terraform Deployment)",
+            category: "Cloud & DevOps | Full Stack",
+            description: "Automated deployment of a full-stack three-tier Books application on AWS using Terraform and Infrastructure as Code (IaC).",
+            details: {
+                why: "To automate cloud infrastructure provisioning and reduce manual configuration by implementing Infrastructure as Code with Terraform.",
+
+                features: [
+                    "Infrastructure provisioning using Terraform (IaC)",
+                    "Three-tier architecture with Frontend, Backend, and RDS",
+                    "Auto Scaling for high availability",
+                    "Application Load Balancer for traffic distribution",
+                    "Secure VPC with public and private subnets",
+                    "Internet Gateway for external connectivity",
+                    "Security Groups for secure access control",
+                    "Target Groups for efficient routing",
+                    "AWS Lambda for serverless tasks",
+                    "S3 for storage and backups"
+                ],
+
+                techStack: "Terraform, AWS (EC2, S3, RDS, Lambda, VPC, Security Groups, Target Groups, Internet Gateway, Load Balancer, IAM), Linux, Git, Full Stack"
+            },
+
+            tech: [
+                "Terraform",
+                "AWS",
+                "Full Stack",
+                "EC2",
+                "S3",
+                "RDS",
+                "Lambda",
+                "VPC",
+                "Load Balancer"
+            ],
+
+            github: "https://github.com/Ajaypatel001/Book_Three_Tier_Application_Custom_Infra",
+            demo: "#",
+            icon: "fab fa-aws"
+        },
+
+        // ✅ Your ORIGINAL project untouched
         {
             title: "AWS Three-Tier Application",
             category: "Cloud & DevOps",
@@ -25,6 +68,7 @@ const Projects = () => {
             demo: "#",
             icon: "fab fa-aws"
         },
+
         {
             title: "Automated Log Backup",
             category: "DevOps",
@@ -103,7 +147,7 @@ const Projects = () => {
 
     const showLessProjects = () => {
         setVisible(3);
-        setExpandedIndex(null); // Collapse any open project when showing less
+        setExpandedIndex(null);
     };
 
     return (
@@ -130,7 +174,6 @@ const Projects = () => {
                                 </div>
                             </div>
 
-                            {/* Expanded Content */}
                             <div className={`project-extended ${expandedIndex === index ? 'expanded' : ''}`}>
                                 <div className="project-extended-inner">
                                     <div className="detail-row">
@@ -171,7 +214,6 @@ const Projects = () => {
                     ))}
                 </div>
 
-                {/* Show More / Show Less Button */}
                 <div className="projects-actions" style={{ textAlign: 'center', marginTop: '2rem' }}>
                     {visible < projectList.length ? (
                         <button className="btn show-more-btn" onClick={showMoreProjects}>

@@ -5,17 +5,9 @@ const Socials = () => {
     const [views, setViews] = useState(0);
 
     useEffect(() => {
-        // Simple mock view counter using localStorage
-        // In a real app, this would fetch from a database
         const storedViews = localStorage.getItem('portfolioViews');
-        let currentViews = storedViews ? parseInt(storedViews) : 1200; // Start at 1200 for a realistic look
+        let currentViews = storedViews ? parseInt(storedViews) : 1200;
 
-        // Increment on session start (mocking a new view)
-        // To prevent infinite increment on refresh during dev, we could use sessionStorage check
-        // but for this simple request, we'll just show the number.
-
-        // Let's just display the count. If user wants it to increment, we can do that.
-        // For now, let's bump it by 1 every time the component mounts (page reload)
         const newViews = currentViews + 1;
         localStorage.setItem('portfolioViews', newViews.toString());
         setViews(newViews);
@@ -39,18 +31,17 @@ const Socials = () => {
         {
             name: 'Replit',
             handle: '@AjayPatel',
-            icon: 'fas fa-code', /* using code icon for replit if brand icon not available */
-            url: 'https://replit.com/@Ajaypatel83054', /* Assuming handle based on email/context, generic if unknown */
+            icon: 'fas fa-code',
+            url: 'https://replit.com/@Ajaypatel83054',
             className: 'replit'
         },
         {
             name: 'X (Twitter)',
             handle: '@AjayPatel',
-            icon: 'fab fa-twitter', /* or fa-x-twitter if available in version */
+            icon: 'fab fa-twitter',
             url: 'https://x.com/AjaypatelPate16',
             className: 'twitter'
         },
-
         {
             name: 'GitLab',
             handle: '@Ajaypatel001',
@@ -67,9 +58,9 @@ const Socials = () => {
         },
         {
             name: 'Resume',
-            handle: 'Download PDF',
+            handle: 'Download Resume',
             icon: 'fas fa-file-download',
-            url: '#',
+            url: '/Ajay_Patel_DevOps_Resume.pdf', // ✅ file in public folder
             className: 'resume'
         }
     ];
@@ -79,7 +70,14 @@ const Socials = () => {
             <div className="socials-container">
                 <div className="socials-grid">
                     {socialLinks.map((link, index) => (
-                        <a key={index} href={link.url} target="_blank" rel="noreferrer" className={`social-card ${link.className}`}>
+                        <a
+                            key={index}
+                            href={link.url}
+                            target={link.name === "Resume" ? "_self" : "_blank"}
+                            rel="noreferrer"
+                            className={`social-card ${link.className}`}
+                            download={link.name === "Resume"}
+                        >
                             <div className="card-content">
                                 <div className="card-icon">
                                     <i className={link.icon}></i>
