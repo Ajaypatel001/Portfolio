@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import './Hero.css';
 import GlowingLogo from './GlowingLogo';
@@ -19,12 +17,6 @@ const Hero = () => {
             <div className="hero-grid-overlay"></div>
             <div className="center-pulse"></div>
 
-            {/* Main Text Content */}
-            <div className="hero-content">
-                <h1 className="hero-word">POWERING</h1>
-                <h1 className="hero-word gradient-text">DEVOPS & CLOUD</h1>
-            </div>
-
             <section id="home" className="hero-profile">
                 <div className="container">
                     <div className="profile-card">
@@ -36,7 +28,6 @@ const Hero = () => {
                                     className="profile-pic anti-gravity"
                                 />
                             </div>
-
 
                             <div className="profile-info">
                                 <span className="last-updated">Last updated just now</span>
@@ -62,7 +53,7 @@ const Hero = () => {
                             </div>
                             <div className="detail-item">
                                 <span className="icon"><i className="fas fa-map-marker-alt"></i></span>
-                                <span>India</span>
+                                <span>Ameerpet, Hyderabad, India</span>
                             </div>
                             <div className="detail-item">
                                 <span className="icon"><i className="fas fa-envelope"></i></span>

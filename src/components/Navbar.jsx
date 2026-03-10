@@ -21,6 +21,14 @@ const Navbar = () => {
                     <a href="#" className="logo">Portfolio</a>
                 </div>
 
+                <div className="nav-links">
+                    <a href="#home" className="nav-link-btn">Home</a>
+                    <a href="#about" className="nav-link-btn">About</a>
+                    <a href="#skills" className="nav-link-btn">Skills</a>
+                    <a href="#projects" className="nav-link-btn">Projects</a>
+                    <a href="#contact" className="nav-link-btn">Contact</a>
+                </div>
+
                 <div className="nav-controls">
                     <div className="nav-actions">
                         {/* New Analytics/Info Trigger */}

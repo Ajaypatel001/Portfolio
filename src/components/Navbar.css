@@ -34,6 +34,32 @@
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link-btn {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: transparent;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.nav-link-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
 .nav-controls {
     display: flex;
     align-items: center;
@@ -276,5 +302,12 @@
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* Responsive Navbar Links */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
     }
 }
