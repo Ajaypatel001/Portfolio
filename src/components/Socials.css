@@ -11,8 +11,8 @@
 }
 
 .social-card {
-    background-color: #111;
-    border: 1px solid #222;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 20px;
     display: flex;
@@ -25,8 +25,8 @@
 
 .social-card:hover {
     transform: translateY(-2px);
-    border-color: #333;
-    background-color: #161616;
+    border-color: var(--text-secondary);
+    background-color: var(--bg-color);
 }
 
 .card-content {
@@ -38,7 +38,7 @@
 .card-icon {
     width: 45px;
     height: 45px;
-    background-color: #1a1a1a;
+    background-color: var(--bg-color);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -52,7 +52,7 @@
 }
 
 .github .card-icon {
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .email .card-icon {
@@ -95,17 +95,17 @@
 }
 
 .card-handle {
-    color: #888;
+    color: var(--text-secondary);
     font-size: 0.85rem;
 }
 
 .card-arrow {
-    color: #444;
+    color: var(--text-secondary);
     transition: color 0.3s ease;
 }
 
 .social-card:hover .card-arrow {
-    color: #fff;
+    color: var(--text-primary);
 }
 
 /* Visitor Counter Specifics */

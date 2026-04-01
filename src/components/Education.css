@@ -22,12 +22,12 @@
 
 .education-item:hover {
     border-color: var(--text-secondary, #666);
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: color-mix(in srgb, var(--text-primary) 3%, transparent);
 }
 
 .education-item.active {
     border-color: var(--accent, #007bff);
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: color-mix(in srgb, var(--text-primary) 5%, transparent);
 }
 
 /* Header Styles */
@@ -41,7 +41,7 @@
 .edu-icon-compact {
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.05);
+    background: color-mix(in srgb, var(--text-primary) 5%, transparent);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -69,7 +69,7 @@
 .edu-year-badge {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.05);
+    background: color-mix(in srgb, var(--text-primary) 5%, transparent);
     padding: 2px 8px;
     border-radius: 4px;
     width: fit-content;
@@ -107,7 +107,7 @@
 
 .edu-degree {
     font-size: 1.1rem;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -14,14 +14,16 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Hero />
-      <Socials />
-      <About />
-      <Education />
-      <Skills />
-      <Services />
-      <Projects />
-      <Contact />
+      <div className="app-content fade-in">
+        <Hero />
+        <Socials />
+        <About />
+        <Education />
+        <Skills />
+        <Services />
+        <Projects />
+        <Contact />
+      </div>
     </div>
   );
 }

@@ -30,8 +30,8 @@
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    background-color: #000;
-    /* Dark input bg */
+    background-color: var(--bg-color);
+    /* Dynamic input bg */
     border: 1px solid var(--border);
     border-radius: 0.5rem;
     color: var(--text-primary);
@@ -52,6 +52,32 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.status-msg {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.status-msg.success {
+    background-color: rgba(0, 255, 136, 0.1);
+    color: #4ade80;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.status-msg.error {
+    background-color: rgba(255, 77, 77, 0.1);
+    color: #ff4d4d;
+    border: 1px solid rgba(255, 77, 77, 0.3);
 }
 
 .social-footer {

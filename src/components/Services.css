@@ -30,7 +30,7 @@
 
 .service-card:hover {
     transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: color-mix(in srgb, var(--text-primary) 5%, transparent);
     border-color: var(--text-secondary, #444);
 }
 
@@ -56,7 +56,7 @@
     /* Reduced size */
     height: 42px;
     /* Reduced size */
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: color-mix(in srgb, var(--text-primary) 5%, transparent);
     border-radius: 8px;
     /* Slightly tighter radius */
     display: flex;
@@ -72,7 +72,7 @@
 
 .service-card:hover .service-icon-box {
     background-color: var(--accent-color);
-    color: #fff;
+    color: var(--text-primary);
     transform: scale(1.05);
 }
 
@@ -80,7 +80,7 @@
     font-size: 1rem;
     /* Compact title */
     font-weight: 600;
-    color: var(--text-primary, #fff);
+    color: var(--text-primary, var(--text-primary));
     margin: 0;
 }
 
