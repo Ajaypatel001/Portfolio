@@ -70,6 +70,16 @@ const Navbar = () => {
                             </a>
                         </div>
 
+                              <div className="modal-section-title">Quick Links</div>
+                        <div className="modal-actions">
+                            <a href="https://github.com/Ajaypatel001" target="_blank" rel="noreferrer" className="modal-btn source">
+                                <i className="fab fa-github"></i> View Source Code
+                            </a>
+                            <a href="#" className="modal-btn portfolio">
+                                <i className="fas fa-external-link-alt"></i> Check Out My Other Portfolio
+                            </a>
+                        </div>
+
                         <div className="modal-footer">
                             <span>Built with React • Vite • CSS</span>
                         </div>
