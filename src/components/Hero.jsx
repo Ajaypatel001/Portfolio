@@ -59,6 +59,10 @@ const Hero = () => {
                                 <span className="icon"><i className="fas fa-envelope"></i></span>
                                 <a href="mailto:Ajaypatel830544@gmail.com">ajaypatel830544@gmail.com</a>
                             </div>
+                             <div className="detail-item">
+                                <span className="icon"><i className="fas fa-globe"></i></span>
+                                <a href="#">830544****</a>
+                            </div>
                             <div className="detail-item">
                                 <span className="icon"><i className="fas fa-globe"></i></span>
                                 <a href="#">Ajay.tech</a>
