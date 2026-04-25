@@ -2,204 +2,158 @@ import React, { useState } from 'react';
 import './Projects.css';
 
 const Projects = () => {
-    const [visible, setVisible] = useState(4);
+    const [visible, setVisible] = useState(3);
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const toggleAccordion = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
     };
 
+    // Reordered list: DevOps/Cloud first
     const projectList = [
 
-        // 🔥 NEW DevOps Project (TOP)
-        {
-            title: "Google Store DevOps Project (EKS + Kubernetes)",
-            category: "Cloud & DevOps | Kubernetes",
-            description: "End-to-end DevOps project deploying a full-stack application using EKS, Kubernetes, CI/CD, and monitoring tools.",
-
-            details: {
-                why: "To build a production-ready DevOps pipeline with Kubernetes, CI/CD, logging, and monitoring on AWS.",
-
-                features: [
-                    "EKS Cluster setup using Terraform",
-                    "Kubernetes deployment (frontend & backend)",
-                    "CI/CD using GitHub Actions",
-                    "ArgoCD for GitOps deployment",
-                    "RDS (MariaDB) integration",
-                    "Ingress-Nginx for routing",
-                    "EFK Stack for logging",
-                    "Prometheus & Grafana monitoring",
-                    "Secure VPC & IAM setup",
-                    "Load Balancer access"
-                ],
-
-                techStack: "AWS (EKS, RDS, VPC, IAM), Kubernetes, Docker, Terraform, ArgoCD, GitHub Actions, Prometheus, Grafana, EFK Stack, Linux"
-            },
-
-            tech: [
-                "AWS",
-                "Kubernetes",
-                "Docker",
-                "Terraform",
-                "ArgoCD",
-                "CI/CD",
-                "Prometheus",
-                "Grafana"
-            ],
-
-            github: "https://github.com/Ajaypatel001/google-store-DevOps-project",
-            demo: "#",
-            icon: "fab fa-aws"
-        },
-
-        // ✅ Terraform Project
+        // ✅ NEW Terraform Project (Added on Top)
         {
             title: "Three-Tier Books Application (Terraform Deployment)",
             category: "Cloud & DevOps | Full Stack",
-            description: "Automated deployment of a full-stack three-tier Books application on AWS using Terraform.",
-
+            description: "Automated deployment of a full-stack three-tier Books application on AWS using Terraform and Infrastructure as Code (IaC).",
             details: {
-                why: "To automate cloud infrastructure provisioning using Infrastructure as Code.",
+                why: "To automate cloud infrastructure provisioning and reduce manual configuration by implementing Infrastructure as Code with Terraform.",
 
                 features: [
-                    "Terraform IaC",
-                    "Three-tier architecture",
-                    "Auto Scaling",
-                    "Load Balancer",
-                    "Secure VPC",
-                    "RDS Database",
-                    "Lambda integration",
-                    "S3 storage"
+                    "Infrastructure provisioning using Terraform (IaC)",
+                    "Three-tier architecture with Frontend, Backend, and RDS",
+                    "Auto Scaling for high availability",
+                    "Application Load Balancer for traffic distribution",
+                    "Secure VPC with public and private subnets",
+                    "Internet Gateway for external connectivity",
+                    "Security Groups for secure access control",
+                    "Target Groups for efficient routing",
+                    "AWS Lambda for serverless tasks",
+                    "S3 for storage and backups"
                 ],
 
-                techStack: "Terraform, AWS, Linux, Git"
+                techStack: "Terraform, AWS (EC2, S3, RDS, Lambda, VPC, Security Groups, Target Groups, Internet Gateway, Load Balancer, IAM), Linux, Git, Full Stack"
             },
 
-            tech: ["Terraform", "AWS", "EC2", "S3", "RDS", "VPC"],
+            tech: [
+                "Terraform",
+                "AWS",
+                "Full Stack",
+                "EC2",
+                "S3",
+                "RDS",
+                "Lambda",
+                "VPC",
+                "Load Balancer"
+            ],
+
             github: "https://github.com/Ajaypatel001/Book_Three_Tier_Application_Custom_Infra",
             demo: "#",
             icon: "fab fa-aws"
         },
 
-        // ✅ AWS Project
+        // ✅ Your ORIGINAL project untouched
         {
             title: "AWS Three-Tier Application",
             category: "Cloud & DevOps",
             description: "Scalable three-tier architecture deployed on AWS.",
-
             details: {
-                why: "To design a highly available system.",
-                features: ["Auto Scaling", "Load Balancing", "Multi-AZ RDS"],
-                techStack: "AWS EC2, S3, RDS, VPC"
+                why: "To design a highly available and fault-tolerant cloud infrastructure.",
+                features: ["Auto Scaling Groups", "ELB Load Balancing", "Multi-AZ RDS Deployment"],
+                techStack: "AWS EC2, S3, RDS, VPC, IAM"
             },
-
-            tech: ["AWS", "EC2", "RDS"],
+            tech: ["AWS", "EC2", "RDS", "Auto Scaling"],
             github: "#",
             demo: "#",
             icon: "fab fa-aws"
         },
 
-        // ✅ DevOps Script
         {
             title: "Automated Log Backup",
             category: "DevOps",
-            description: "Automated EC2 log backups with monitoring.",
-
+            description: "Automated EC2 log backups with monitoring and alerts.",
             details: {
-                why: "To automate backups and ensure data safety.",
-                features: ["Shell Script", "Cron Jobs", "S3 Backup"],
-                techStack: "Bash, AWS CLI, CloudWatch"
+                why: "To ensure data persistence and automate routine maintenance tasks.",
+                features: ["Shell Scripting for Backups", "Cron Jobs", "S3 Lifecycle Policies"],
+                techStack: "Bash, AWS CLI, CloudWatch, S3"
             },
-
-            tech: ["AWS", "Linux", "S3"],
+            tech: ["AWS", "S3", "CloudWatch", "Linux"],
             github: "#",
             demo: "#",
             icon: "fas fa-server"
         },
-
-        // ✅ Other Projects
         {
             title: "Path 4 You",
             category: "Career Guidance",
-            description: "Platform helping students find career paths.",
-
+            description: "Comprehensive platform helping students find their right path.",
             details: {
-                why: "To guide students.",
-                features: ["Roadmap", "Tracking"],
-                techStack: "MERN Stack"
+                why: "To provide students with personalized career roadmaps.",
+                features: ["Interactive Roadmap", "Resource Aggregation", "User Progress Tracking"],
+                techStack: "MERN Stack, OpenAI API"
             },
-
-            tech: ["React", "Node"],
+            tech: ["MERN Stack", "React", "Node"],
             github: "",
             demo: "#",
             icon: "fas fa-laptop-code"
         },
-
         {
             title: "Govt. Schemes",
             category: "Info Portal",
-            description: "Government schemes platform.",
-
+            description: "Aggregating various government schemes for easy access.",
             details: {
-                why: "To simplify access.",
-                features: ["Search", "Filter"],
-                techStack: "HTML, CSS, JS"
+                why: "To simplify access to government welfare programs.",
+                features: ["Search & Filter", "Categorized Listings", "Multi-language Support"],
+                techStack: "HTML, CSS, JavaScript, Fetch API"
             },
-
-            tech: ["Frontend"],
+            tech: ["Frontend", "API"],
             github: "https://github.com/Ajaypatel001/Govt.scheems",
             demo: "#",
             icon: "fas fa-landmark"
         },
-
         {
             title: "Blog Application",
             category: "Full Stack",
-            description: "Blog platform with auth.",
-
+            description: "Blogging platform with user auth and CRUD features.",
             details: {
-                why: "To build full stack app.",
-                features: ["JWT Auth", "CRUD"],
-                techStack: "React, Node, MongoDB"
+                why: "To build a complete full-stack web application with modern technologies.",
+                features: ["User Authentication (JWT)", "RESTful API", "Responsive UI"],
+                techStack: "React, Node.js, Express, MongoDB, AWS"
             },
-
-            tech: ["React", "Node"],
+            tech: ["React", "Node.js", "AWS"],
             github: "https://github.com/Ajaypatel001/Blog_project",
             demo: "#",
             icon: "fas fa-blog"
         },
-
         {
             title: "Movie Tracker",
             category: "Web App",
-            description: "Movie tracking app.",
-
+            description: "Track and discover movies using external APIs.",
             details: {
-                why: "To learn API integration.",
-                features: ["Search", "Watchlist"],
-                techStack: "React"
+                why: "To explore API integration and state management in React.",
+                features: ["Movie Search", "Watchlist Management", "Rating System"],
+                techStack: "React, Redux Toolkit, TMDB API"
             },
-
-            tech: ["React"],
+            tech: ["React", "Redux"],
             github: "https://github.com/Ajaypatel001/Movie_Tracker",
             demo: "#",
             icon: "fas fa-film"
         }
     ];
 
-    const showMoreProjects = () => setVisible(prev => prev + 3);
+    const showMoreProjects = () => {
+        setVisible((prevValue) => prevValue + 3);
+    };
+
     const showLessProjects = () => {
-        setVisible(4);
+        setVisible(3);
         setExpandedIndex(null);
     };
 
     return (
         <section id="projects" className="projects-section">
             <div className="container">
-                <h2 className="section-title">
-                    Projects <span className="count">({projectList.length})</span>
-                </h2>
-
+                <h2 className="section-title">Projects <span className="count">({projectList.length})</span></h2>
                 <div className="projects-list">
                     {projectList.slice(0, visible).map((project, index) => (
                         <div
@@ -211,51 +165,66 @@ const Projects = () => {
                                 <div className="project-img-placeholder">
                                     <i className={project.icon}></i>
                                 </div>
-
                                 <div className="project-info">
-                                    <h3>
-                                        {project.title}
-                                        <span className="category-tag">{project.category}</span>
-                                    </h3>
-                                    <p>{project.description}</p>
+                                    <h3>{project.title} <span className="category-tag">{project.category}</span></h3>
+                                    <p className="project-desc-short">{project.description}</p>
                                 </div>
-
-                                <i className={`fas fa-chevron-down ${expandedIndex === index ? 'rotate' : ''}`}></i>
+                                <div className="project-toggle">
+                                    <i className={`fas fa-chevron-down ${expandedIndex === index ? 'rotate' : ''}`}></i>
+                                </div>
                             </div>
 
-                            {expandedIndex === index && (
-                                <div className="project-extended">
-                                    <p><strong>Why:</strong> {project.details.why}</p>
-
-                                    <ul>
-                                        {project.details.features.map((f, i) => (
-                                            <li key={i}>{f}</li>
-                                        ))}
-                                    </ul>
-
-                                    <p><strong>Tech:</strong> {project.details.techStack}</p>
+                            <div className={`project-extended ${expandedIndex === index ? 'expanded' : ''}`}>
+                                <div className="project-extended-inner">
+                                    <div className="detail-row">
+                                        <strong>Why I built this:</strong>
+                                        <p>{project.details.why}</p>
+                                    </div>
+                                    <div className="detail-row">
+                                        <strong>Key Features:</strong>
+                                        <ul>
+                                            {project.details.features.map((feat, i) => (
+                                                <li key={i}>{feat}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div className="detail-row">
+                                        <strong>Tech Stack:</strong>
+                                        <p className="tech-highlight">{project.details.techStack}</p>
+                                    </div>
                                 </div>
-                            )}
+                            </div>
 
                             <div className="project-footer">
-                                {project.tech.map((t, i) => (
-                                    <span key={i} className="mini-tag">{t}</span>
-                                ))}
-
-                                <div>
-                                    <a href={project.github}>GitHub</a>
-                                    <a href={project.demo}>Demo</a>
+                                <div className="tech-stack-mini">
+                                    {project.tech.map((t, i) => (
+                                        <span key={i} className="mini-tag">{t}</span>
+                                    ))}
+                                </div>
+                                <div className="project-actions">
+                                    <a href={project.github} className="btn-project btn-github" onClick={(e) => e.stopPropagation()}>
+                                        <i className="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href={project.demo} className="btn-project btn-demo" onClick={(e) => e.stopPropagation()}>
+                                        <i className="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <div style={{ textAlign: "center", marginTop: "20px" }}>
+                <div className="projects-actions" style={{ textAlign: 'center', marginTop: '2rem' }}>
                     {visible < projectList.length ? (
-                        <button onClick={showMoreProjects}>Show More</button>
+                        <button className="btn show-more-btn" onClick={showMoreProjects}>
+                            Show More <i className="fas fa-chevron-down"></i>
+                        </button>
                     ) : (
-                        <button onClick={showLessProjects}>Show Less</button>
+                        visible > 3 && (
+                            <button className="btn show-more-btn" onClick={showLessProjects}>
+                                Show Less <i className="fas fa-chevron-up"></i>
+                            </button>
+                        )
                     )}
                 </div>
             </div>
