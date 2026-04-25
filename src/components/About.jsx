@@ -18,8 +18,11 @@ const About = () => {
             </p>
 
             <p>
-              I enjoy working with <strong>AWS, Docker, Kubernetes, Terraform, OpenTofu, Linux, Git, and GitHub</strong>
+              I enjoy working with <strong>AWS, Azure, GCP, Docker, Kubernetes, Terraform, OpenTofu, ArgoCD, Linux, Git, and GitHub</strong>
               to design, deploy, and manage scalable and reliable applications.
+            </p>
+
+            <p>
               I have hands-on experience with <strong>CI/CD tools</strong> such as
               <strong> Jenkins, GitHub Actions, and GitLab CI/CD</strong>, enabling faster
               and more efficient software delivery.
