@@ -69,7 +69,7 @@ const Socials = () => {
             name: 'Resume',
             handle: 'Download PDF',
             icon: 'fas fa-file-download',
-            url: '#',
+            url: 'Ajay_Patel_Resume.pdf',
             className: 'resume'
         }
     ];
