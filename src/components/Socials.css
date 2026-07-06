@@ -1,120 +1,240 @@
+.socials-section {
+    padding: 80px 0;
+}
+
 .socials-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .socials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
 }
 
 .social-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
+    position: relative;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    align-items: center;
+
+    padding: 22px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
     text-decoration: none;
-    color: inherit;
-}
-
-.social-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--text-secondary);
-    background-color: var(--bg-color);
-}
-
-.card-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.card-icon {
-    width: 45px;
-    height: 45px;
-    background-color: var(--bg-color);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-}
-
-/* Brand specific colors for icons */
-.linkedin .card-icon {
-    color: #0077b5;
-}
-
-.github .card-icon {
     color: var(--text-primary);
+
+    transition: all .35s ease;
+
+    overflow: hidden;
 }
 
-.email .card-icon {
-    color: #ea4335;
+.social-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+    transition:.6s;
 }
 
-.twitter .card-icon {
-    color: #1da1f2;
+.social-card:hover::before{
+    left:100%;
 }
 
-.gitlab .card-icon {
-    color: #fc6d26;
+.social-card:hover{
+    transform:translateY(-8px);
+    border-color:#00d4ff;
+    box-shadow:0 15px 35px rgba(0,212,255,.18);
 }
 
-.portfolio .card-icon {
-    color: #00b894;
+.card-content{
+    display:flex;
+    align-items:center;
+    gap:18px;
 }
 
-/* Minty green/blue */
-.resume .card-icon {
-    color: #e17055;
+.card-icon{
+    width:60px;
+    height:60px;
+    border-radius:16px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+
+    background:rgba(255,255,255,.08);
+
+    transition:.35s;
 }
 
-/* Terracotta */
-.views .card-icon {
-    color: #00ff88;
+.social-card:hover .card-icon{
+    transform:rotate(-8deg) scale(1.08);
 }
 
-/* Bright green for views */
+/* Icon Colors */
 
-.card-text {
-    display: flex;
-    flex-direction: column;
+.linkedin .card-icon{
+    color:#0A66C2;
 }
 
-.card-title {
-    font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 4px;
+.github .card-icon{
+    color:#ffffff;
 }
 
-.card-handle {
-    color: var(--text-secondary);
-    font-size: 0.85rem;
+.replit .card-icon{
+    color:#F26207;
 }
 
-.card-arrow {
-    color: var(--text-secondary);
-    transition: color 0.3s ease;
+.twitter .card-icon{
+    color:#1DA1F2;
 }
 
-.social-card:hover .card-arrow {
-    color: var(--text-primary);
+.gitlab .card-icon{
+    color:#FC6D26;
 }
 
-/* Visitor Counter Specifics */
-.visitor-card {
-    grid-column: 1 / -1;
-    /* Span full width if you want, or keep it standard */
+.portfolio .card-icon{
+    color:#00D084;
 }
 
-@media (min-width: 768px) {
-    /* Make views card span full width on desktop if it's the last odd item? 
-       Actually, keeping it standard grid is better for uniformity. */
+.resume .card-icon{
+    color:#FF9800;
+}
+
+.email .card-icon{
+    color:#EA4335;
+}
+
+.card-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.card-title{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:4px;
+}
+
+.card-handle{
+    color:var(--text-secondary);
+    font-size:14px;
+}
+
+.card-arrow{
+    font-size:22px;
+    color:var(--text-secondary);
+    transition:.35s;
+}
+
+.social-card:hover .card-arrow{
+    color:#00d4ff;
+    transform:translateX(5px);
+}
+
+/* Resume Card Special */
+
+.resume{
+    border:1px solid rgba(255,152,0,.3);
+}
+
+.resume:hover{
+    border-color:#FF9800;
+    box-shadow:0 15px 35px rgba(255,152,0,.25);
+}
+
+/* Portfolio Card */
+
+.portfolio:hover{
+    border-color:#00D084;
+    box-shadow:0 15px 35px rgba(0,208,132,.20);
+}
+
+/* LinkedIn */
+
+.linkedin:hover{
+    border-color:#0A66C2;
+}
+
+/* GitHub */
+
+.github:hover{
+    border-color:#ffffff55;
+}
+
+/* GitLab */
+
+.gitlab:hover{
+    border-color:#FC6D26;
+}
+
+/* Twitter */
+
+.twitter:hover{
+    border-color:#1DA1F2;
+}
+
+/* Replit */
+
+.replit:hover{
+    border-color:#F26207;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.socials-grid{
+    grid-template-columns:1fr;
+}
+
+.social-card{
+    padding:18px;
+}
+
+.card-icon{
+    width:52px;
+    height:52px;
+    font-size:22px;
+}
+
+.card-title{
+    font-size:16px;
+}
+
+.card-handle{
+    font-size:13px;
+}
+
+}
+
+@media(max-width:480px){
+
+.social-card{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.card-arrow{
+    align-self:flex-end;
+}
+
 }
