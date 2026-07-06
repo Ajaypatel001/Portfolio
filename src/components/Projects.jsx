@@ -97,49 +97,7 @@ const Projects = () => {
             demo: "#",
             icon: "fas fa-laptop-code"
         },
-        {
-            title: "Govt. Schemes",
-            category: "Info Portal",
-            description: "Aggregating various government schemes for easy access.",
-            details: {
-                why: "To simplify access to government welfare programs.",
-                features: ["Search & Filter", "Categorized Listings", "Multi-language Support"],
-                techStack: "HTML, CSS, JavaScript, Fetch API"
-            },
-            tech: ["Frontend", "API"],
-            github: "https://github.com/Ajaypatel001/Govt.scheems",
-            demo: "#",
-            icon: "fas fa-landmark"
-        },
-        {
-            title: "Blog Application",
-            category: "Full Stack",
-            description: "Blogging platform with user auth and CRUD features.",
-            details: {
-                why: "To build a complete full-stack web application with modern technologies.",
-                features: ["User Authentication (JWT)", "RESTful API", "Responsive UI"],
-                techStack: "React, Node.js, Express, MongoDB, AWS"
-            },
-            tech: ["React", "Node.js", "AWS"],
-            github: "https://github.com/Ajaypatel001/Blog_project",
-            demo: "#",
-            icon: "fas fa-blog"
-        },
-        {
-            title: "Movie Tracker",
-            category: "Web App",
-            description: "Track and discover movies using external APIs.",
-            details: {
-                why: "To explore API integration and state management in React.",
-                features: ["Movie Search", "Watchlist Management", "Rating System"],
-                techStack: "React, Redux Toolkit, TMDB API"
-            },
-            tech: ["React", "Redux"],
-            github: "https://github.com/Ajaypatel001/Movie_Tracker",
-            demo: "#",
-            icon: "fas fa-film"
-        }
-    ];
+     ];
 
     const showMoreProjects = () => {
         setVisible((prevValue) => prevValue + 3);
