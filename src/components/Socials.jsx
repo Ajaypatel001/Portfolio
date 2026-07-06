@@ -119,7 +119,6 @@ const Socials = () => {
                         fontSize: "15px"
                     }}
                 >
-                    👀 Portfolio Views : <strong>{views}</strong>
                 </div>
             </div>
         </section>
