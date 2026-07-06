@@ -4,12 +4,6 @@ import './Services.css';
 const Services = () => {
     const services = [
         {
-            title: "Web Development",
-            icon: "fas fa-code",
-            description: "Building responsive, modern, and high-performance web applications using React, Node.js, and other cutting-edge technologies.",
-            color: "#61dafb" // React blue-ish
-        },
-        {
             title: "Cloud Deployment",
             icon: "fas fa-cloud-upload-alt",
             description: "Deploying scalable applications to the cloud, ensuring high availability, fault tolerance, and secure infrastructure.",
@@ -27,6 +21,12 @@ const Services = () => {
             description: "Automating testing, building, and deployment workflows to streamline development and reduce delivery time.",
             color: "#e24329" // GitLab/Jenkins red-ish
         }
+          {
+            title: "Web Development",
+            icon: "fas fa-code",
+            description: "Building responsive, modern, and high-performance web applications using React, Node.js, and other cutting-edge technologies.",
+            color: "#61dafb" // React blue-ish
+        },
     ];
 
     return (
