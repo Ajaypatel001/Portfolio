@@ -6,7 +6,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setStatus('sending');
+        setStatus('sending');   
         
         const formData = new FormData(e.target);
         const name = formData.get('name');
